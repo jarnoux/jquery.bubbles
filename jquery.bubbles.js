@@ -66,6 +66,9 @@
             var end_callback = function(event){
                 if(config.finish_condition){
                     if(!config.finish_condition(event)){
+                        if(config.finish_callback){
+                            config.finish_callback();
+                        }
                         return true;
                     }
                 }
